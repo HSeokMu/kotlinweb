@@ -1,0 +1,11 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- 다른 설정들 -->
+        <!-- 이벤트 리스너 설정 -->
+        <property name="hibernate.ejb.event.pre-insert">sm.interceptor.HibernateEventListener</property>
+        <property name="hibernate.ejb.event.pre-update">sm.interceptor.HibernateEventListener</property>
+    </session-factory>
+</hibernate-configuration>
