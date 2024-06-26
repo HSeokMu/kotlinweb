@@ -2,17 +2,11 @@ package sm.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.security.config.Customizer
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
-import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer.AuthorizationManagerRequestMatcherRegistry
-import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer
-import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer
-import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
-import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.provisioning.InMemoryUserDetailsManager
 import org.springframework.security.web.SecurityFilterChain
 import sm.domain.account.service.AccountService
@@ -21,7 +15,7 @@ import sm.domain.account.service.AccountService
 @EnableWebSecurity
 class SecurityConfig(
     private val accountService: AccountService,
-    private val passwordEncoder: PasswordEncoder
+    // private val passwordEncoder: PasswordEncoder
 ) {
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain =
