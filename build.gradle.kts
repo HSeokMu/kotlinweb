@@ -38,12 +38,15 @@ dependencies {
 	implementation("org.springframework.session:spring-session-core")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+	// DB
+	implementation("org.postgresql:postgresql:42.7.3")
+	implementation("com.zaxxer:HikariCP")
 
 	// Spring Security
 	implementation("org.springframework.boot:spring-boot-starter-security")
@@ -55,14 +58,18 @@ dependencies {
 	// JPA query dsl
 	implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
 	implementation("org.springframework.boot:spring-boot-starter-mail")
+	/*implementation("jakarta.persistence:jakarta.persistence-api:3.2.0")
+	implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")*/
 	implementation("com.querydsl:querydsl-jpa:5.1.0")
 	implementation("com.querydsl:querydsl-apt:5.1.0")
-	implementation("jakarta.persistence:jakarta.persistence-api:3.2.0")
-	implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")
 
 	// logger
+	implementation("org.apache.logging.log4j:log4j-core")
+	implementation("org.apache.logging.log4j:log4j-api")
+	implementation("org.apache.logging.log4j:log4j-slf4j-impl")
 	implementation("org.slf4j:slf4j-api")
 	implementation("ch.qos.logback:logback-classic")
+	implementation("org.springframework.boot:spring-boot-starter-logging")
 }
 
 
